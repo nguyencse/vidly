@@ -30,6 +30,7 @@ flutter:
    - lib/images/mic.svg
    - lib/images/video_camera.svg
    - lib/images/video.svg
+   - lib/images/bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
