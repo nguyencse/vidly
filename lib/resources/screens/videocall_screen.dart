@@ -43,7 +43,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 child: Stack(
                   children: <Widget>[
                     Positioned(
-                      bottom: 32,
+                      bottom: 24,
                       left: 0,
                       right: 0,
                       child: Column(
@@ -54,14 +54,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                IconButton(
-                                    icon:
-                                        SvgPicture.asset('lib/images/flip.svg'),
-                                    onPressed: () {}),
-                                IconButton(
-                                    icon:
-                                        SvgPicture.asset('lib/images/mic.svg'),
-                                    onPressed: () {}),
+                                SizedBox(width: 56, height: 56, child: IconButton(icon: SvgPicture.asset('lib/images/flip.svg'), onPressed: () {})),
+                                SizedBox(width: 56, height: 56, child: IconButton(icon: SvgPicture.asset('lib/images/mic.svg'), onPressed: () {})),
                               ],
                             ),
                           ),
@@ -70,46 +64,51 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                IconButton(
-                                    icon:
-                                        SvgPicture.asset('lib/images/flip.svg'),
-                                    onPressed: () {}),
-                                IconButton(
-                                    icon: Stack(
-                                      children: <Widget>[
-                                        Positioned(
-                                          top: 0,
-                                          left: 0,
-                                          right: 0,
-                                          bottom: 0,
-                                          child: SvgPicture.asset(
-                                              'lib/images/video.svg'),
-                                        ),
-                                        Positioned(
-                                          top: 7,
-                                          left: 7,
-                                          right: 7,
-                                          bottom: 7,
-                                          child: SvgPicture.asset(
-                                              'lib/images/video_camera.svg'),
-                                        ),
-                                      ],
-                                    ),
-                                    onPressed: () {}),
+                                SizedBox(
+                                  width: 56,
+                                  height: 56,
+                                  child: IconButton(
+                                    icon: SvgPicture.asset('lib/images/flip.svg'),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 56,
+                                  height: 56,
+                                  child: IconButton(
+                                      icon: Stack(
+                                        children: <Widget>[
+                                          Positioned(
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            child: SvgPicture.asset('lib/images/video.svg'),
+                                          ),
+                                          Positioned(
+                                            top: 7,
+                                            left: 7,
+                                            right: 7,
+                                            bottom: 7,
+                                            child: SvgPicture.asset('lib/images/video_camera.svg'),
+                                          ),
+                                        ],
+                                      ),
+                                      onPressed: () {}),
+                                ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 140),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                IconButton(
-                                    icon: SvgPicture.asset(
-                                        'lib/images/endcall.svg'),
-                                    onPressed: () {}),
-                              ],
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 140),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  SizedBox(width: 56, height: 56, child: IconButton(icon: SvgPicture.asset('lib/images/endcall.svg'), onPressed: () {})),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -128,9 +127,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   Widget customAppBar() => CustomAppBar(
         color: Colors.transparent,
         centerTitle: true,
-        leading: IconButton(
-            icon: SvgPicture.asset('lib/images/arrow_left.svg'),
-            onPressed: () {}),
+        leading: IconButton(icon: SvgPicture.asset('lib/images/arrow_left.svg'), onPressed: () {}),
         title: Column(
           children: <Widget>[
             Text(
@@ -141,11 +138,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
           ],
         ),
         actions: <Widget>[
-          IconButton(
-              icon: SvgPicture.asset('lib/images/add.svg'), onPressed: () {}),
-          IconButton(
-              icon: SvgPicture.asset('lib/images/message_circle.svg'),
-              onPressed: () {}),
+          IconButton(icon: SvgPicture.asset('lib/images/add.svg'), onPressed: () {}),
+          IconButton(icon: SvgPicture.asset('lib/images/message_circle.svg'), onPressed: () {}),
         ],
       );
 }
